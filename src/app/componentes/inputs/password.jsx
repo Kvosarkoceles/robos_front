@@ -6,7 +6,7 @@ import { EyeFilledIcon } from "@/app/componentes/inputpassoword/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "@/app/componentes/inputpassoword/EyeSlashFilledIcon";
 import React from "react";
 
-export const Password = ({ refs, posicion }) => {
+export const Password = ({ name, id, value, onChange, placeholder, className }) => {
 
     const [isVisible, setIsVisible] = React.useState(false);
 
@@ -16,10 +16,12 @@ export const Password = ({ refs, posicion }) => {
         <>
             <Input
                 label="Password"
+                name = {name}
                 variant="bordered"
-                placeholder="Enter your password"
+                placeholder={placeholder}
                 id="password"
-                // value={password}
+             
+                value={value}
                 onChange={(e) => setPassword(e.target.value)}
                 endContent={
                     <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">

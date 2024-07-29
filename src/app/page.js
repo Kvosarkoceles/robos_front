@@ -6,6 +6,7 @@ import { Button } from "@nextui-org/react";
 import { Text } from "@/app/componentes/inputs/text";
 import { Password } from "@/app/componentes/inputs/password";
 import React, { useRef, useEffect, useState } from "react";
+import Link from 'next/link';
 
 
 import axios from 'axios';
@@ -35,7 +36,7 @@ export default function Home() {
   };
   const handleChange = (e) => {
     setUsuario(e.target.value);
-};
+  };
 
   function handleClick() {
     console.log("On click")
@@ -50,20 +51,29 @@ export default function Home() {
           type="text"
           name="usuario"
           id="usuario"
-          value="usuario"
+          value=""
           onChange={handleChange}
           placeholder="Enter your User"
           className="form-login-user"
+          label="usuario"
         />
 
 
 
-        {/* <Text></Text> */}
-        <Password></Password>
+     
+        <Password
+          name="password"
+          id="password" placeholder="Enter your Password"
+          className="form-login-password"
+          value=""
+
+        />
+
+
         <Button color="primary" className="buttonEnviar" onClick={handleClick}>
           Ingresar
         </Button>
-        <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
+        <Link href="/reset">¿Olvidaste tu Contraseña?</Link>
       </section>
     </>
   );

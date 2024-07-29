@@ -1,6 +1,6 @@
 import { Input } from "@nextui-org/input";
 
-export const Text = ({ type = "text", name, id, value, onChange, placeholder, className }) => {
+export const Text = ({ name, id, value, onChange, placeholder, className,label }) => {
  
     return (
         <>
@@ -13,6 +13,7 @@ export const Text = ({ type = "text", name, id, value, onChange, placeholder, cl
                 onChange={onChange}
                 placeholder={placeholder}
                 className={className}
+                    label={label}
             />
         </>
     );
